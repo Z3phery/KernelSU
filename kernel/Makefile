@@ -14,7 +14,7 @@ $(info -- MDIR: $(MDIR))
 # compliant to last upstream kernel change as of 0a1f3ff
 KSU_VERSION := 32676
 KSU_VERSION_TAG := v3.3.1
-KSU_KSUN_TAG := v3.4.1
+KSU_KSUN_TAG := v3.4.2
 KSU_BKSU_TAG := v4.2.0
 KSU_KSUN_VERSION := $(shell echo $$(($(KSU_VERSION) + 662)))
 KSU_BKSU_VERSION := $(shell echo $$(($(KSU_VERSION) + 2550)))
@@ -33,9 +33,9 @@ $(info -- BakaSU version: $(KSU_BKSU_VERSION))
 ifeq ($(CONFIG_KSU_KPROBES_KSUD),y)
 KSU_HOOK_TYPE := Kprobes
 else ifeq ($(CONFIG_KSU_TAMPER_SYSCALL_TABLE),y)
-KSU_HOOK_TYPE := Manipulated
+KSU_HOOK_TYPE := Manual
 else ifeq ($(CONFIG_KSU_HACK_ARM64_BRANCH_LINK),y)
-KSU_HOOK_TYPE := Manipulated
+KSU_HOOK_TYPE := Manual
 else
 KSU_HOOK_TYPE := Manual
 endif
