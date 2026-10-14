@@ -510,7 +510,7 @@ static int do_get_hook_mode(void __user *arg)
 	type = "Kprobes";
 #elif defined(CONFIG_KSU_TAMPER_SYSCALL_TABLE) || \
       defined(CONFIG_KSU_HACK_ARM64_BRANCH_LINK)
-	type = "Hookless";
+	type = "Manual";
 #endif
 
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 13, 0)
