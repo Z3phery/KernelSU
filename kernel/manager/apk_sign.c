@@ -348,6 +348,10 @@ enum ksu_manager_type ksu_detect_manager_apk(char *path)
 	// Baka-SU/BakaSU
     if (check_v2_signature(path, 0x377, "d3469712b6214462764a1d8d3e5cbe1d6819a0b629791b9f4101867821f1df64"))
         return KSU_MANAGER_BKSU;
+        
+    // LyraVoid/FinaSU
+	if (check_v2_signature(path, 0x2cc, "2d89b50aaf1db013c2b6738f973f48b62ea21a3a8d7216bfec3521065d448458"))
+		return KSU_MANAGER_XXSU;
 
 	return KSU_MANAGER_UNKNOWN;
 }
